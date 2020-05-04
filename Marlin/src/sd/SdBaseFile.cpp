@@ -47,9 +47,9 @@ void (*SdBaseFile::dateTime_)(uint16_t* date, uint16_t* time) = 0;
 
 // add a cluster to a file
 bool SdBaseFile::addCluster() {
-#if ENABLED(SDCARD_READONLY)
+  #if ENABLED(SDCARD_READONLY)
   return false;
-#else
+  #else
   if (!vol_->allocContiguous(1, &curCluster_)) return false;
 
   // if first cluster of file link to directory entry
@@ -58,7 +58,7 @@ bool SdBaseFile::addCluster() {
     flags_ |= F_FILE_DIR_DIRTY;
   }
   return true;
-#endif
+  #endif
 }
 
 // Add a cluster to a directory file and zero the cluster.
