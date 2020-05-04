@@ -1208,7 +1208,7 @@
    */
   //#define SDCARD_CONNECTION LCD
 
-  //#define SDCARD_READONLY   // Disable write support for SD cards (saves ~2192 PROGMEM bytes)
+  #define SDCARD_READONLY   // Disable write support for SD cards (saves ~2192 PROGMEM bytes)
   #if ENABLED(SDCARD_READONLY)
     #if ENABLED(POWER_LOSS_RECOVERY)
       #error Read-only SD-card support is incompatible with power-loss recovery
